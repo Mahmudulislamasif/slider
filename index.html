@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container
+    {
+      max-width: 1140px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .card-container {
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      position: relative;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+    .card-container::-webkit-scrollbar {
+  width: 5px; /* Width of the scroll bar */
+  height: 8px;
+ 
+}
+
+.card-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1; 
+  
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background-color: #b44141; /* Color of the scroll bar thumb */
+  border: 2px none;
+  border-radius: 5px;
+  
+}
+
+    .card {
+      display: inline-block;
+      width: 200px;
+      margin-right: 10px;
+      padding: 10px;
+      background-color: #f2f2f2;
+      text-align: center;
+      cursor: pointer;
+    }
+    
+    .card.active {
+      border: 2px solid blue;
+    }
+    
+    .card-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    
+    .card-title {
+      font-size: 18px;
+    }
+    
+    .hero-card {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .hero-image {
+      width: 50%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    
+    .hero-title {
+      font-size: 24px;
+      font-weight: bold;
+      width: 50%;
+    }
+    
+    .additional-div {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+    
+    .additional-content {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    
+    .arrow {
+      position: absolute;
+      top: 65%;
+    
+      right:50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: black;
+      color: #fff;
+      font-size: 24px;
+      display: flex;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+    }
+    
+    .arrow:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .arrow.left {
+      left: 10px;
+      
+    }
+    
+    .arrow.right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card-container" id="card-container">
+      <div class="card active" onclick="showHeroCard(1)">
+        <span class="card-icon">Icon 1</span>
+        <span class="card-title">Title 1</span>
+      </div>
+      <div class="card" onclick="showHeroCard(2)">
+        <span class="card-icon">Icon 2</span>
+        <span class="card-title">Title 2</span>
+      </div>
+      <div class="card" onclick="showHeroCard(3)">
+        <span class="card-icon">Icon 3</span>
+        <span class="card-title">Title 3</span>
+      </div>
+      <div class="card" onclick="showHeroCard(4)">
+        <span class="card-icon">Icon 4</span>
+        <span class="card-title">Title 4</span>
+      </div>
+      <div class="card" onclick="showHeroCard(5)">
+        <span class="card-icon">Icon 5</span>
+        <span class="card-title">Title 6</span>
+      </div>
+      <div class="card" onclick="showHeroCard(6)">
+        <span class="card-icon">Icon 6</span>
+        <span class="card-title">Title 5</span>
+      </div>
+      <div class="card" onclick="showHeroCard(7)">
+        <span class="card-icon">Icon 7</span>
+        <span class="card-title">Title 5</span>
+      </div>
+      <div class="card" onclick="showHeroCard(8)">
+        <span class="card-icon">Icon 8</span>
+        <span class="card-title">Title 8</span>
+      </div>
+      <div class="card" onclick="showHeroCard(9)">
+        <span class="card-icon">Icon 9</span>
+        <span class="card-title">Title 9</span>
+      </div>
+      <div class="card" onclick="showHeroCard(10)">
+        <span class="card-icon">Icon 10</span>
+        <span class="card-title">Title 10</span>
+      </div>
+      <div class="card" onclick="showHeroCard(11)">
+        <span class="card-icon">Icon 11</span>
+        <span class="card-title">Title 11</span>
+      </div>
+      <div class="card" onclick="showHeroCard(12)">
+        <span class="card-icon">Icon 12</span>
+        <span class="card-title">Title 12</span>
+      </div>
+      <div class="card" onclick="showHeroCard(13)">
+        <span class="card-icon">Icon 13</span>
+        <span class="card-title">Title 13</span>
+      </div>
+      <div class="card" onclick="showHeroCard(14)">
+        <span class="card-icon">Icon 14</span>
+        <span class="card-title">Title 14</span>
+      </div>
+      <div class="card" onclick="showHeroCard(15)">
+        <span class="card-icon">Icon 15</span>
+        <span class="card-title">Title 15</span>
+      </div>
+      <div class="card" onclick="showHeroCard(16)">
+        <span class="card-icon">Icon 16</span>
+        <span class="card-title">Title 16</span>
+      </div>
+    </div>
+    <!-- Repeat the above card structure for the remaining cards -->
+    <div class="arrow left" onclick="showPreviousCard()">&lt;</div>
+    <div class="arrow right" onclick="showNextCard()">&gt;</div>
+  
+    <div class="hero-card" id="hero-card-1" style="display: flex;">
+      <img src="./01_GCO-ShopGridMay-2019-Saroff-Merch-Hoodie_037.jpg" alt="Hero Image" class="hero-image">
+      <h2 class="hero-title">Hero Title 1</h2>
+    </div>
+  
+    <div class="hero-card" id="hero-card-2">
+      <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+      <h2 class="hero-title">Hero Title 2</h2>
+    </div>
+    <div class="hero-card" id="hero-card-3">
+      <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+      <h2 class="hero-title">Hero Title 3</h2>
+    </div>
+    <div class="hero-card" id="hero-card-4">
+      <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+      <h2 class="hero-title">Hero Title 4</h2>
+    </div>
+    <div class="hero-card" id="hero-card-5">
+      <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+      <h2 class="hero-title">Hero Title 5</h2>
+    </div>
+    <div class="hero-card" id="hero-card-6">
+      <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+      <h2 class="hero-title">Hero Title 6</h2>
+    </div>
+    <div class="hero-card" id="hero-card-7">
+      <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+      <h2 class="hero-title">Hero Title 7</h2>
+    </div>
+    <div class="hero-card" id="hero-card-8">
+      <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+      <h2 class="hero-title">Hero Title 8</h2>
+    </div>
+    <div class="hero-card" id="hero-card-9">
+      <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+      <h2 class="hero-title">Hero Title 9</h2>
+    </div>
+    <div class="hero-card" id="hero-card-10">
+      <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+      <h2 class="hero-title">Hero Title 10</h2>
+    </div>
+    <div class="hero-card" id="hero-card-11">
+      <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+      <h2 class="hero-title">Hero Title 11</h2>
+      </div>
+      <div class="hero-card" id="hero-card-12">
+        <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+        <h2 class="hero-title">Hero Title 12</h2>
+      </div>
+      <div class="hero-card" id="hero-card-13">
+        <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+        <h2 class="hero-title">Hero Title 13</h2>
+      </div>
+      <div class="hero-card" id="hero-card-14">
+        <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+        <h2 class="hero-title">Hero Title 14</h2>
+      </div>
+      <div class="hero-card" id="hero-card-15">
+        <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+        <h2 class="hero-title">Hero Title 15</h2>
+      </div>
+      <div class="hero-card" id="hero-card-16">
+        <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+        <h2 class="hero-title">Hero Title 16</h2>
+      </div>
+    </div>
+  </div>
+  </body>
+<script>
+  // Variable to keep track of the current active card
+  var currentCard = 1;
+
+  // Function to show the previous hero card
+  function showPreviousCard() {
+    if (currentCard > 1) {
+      showHeroCard(currentCard - 1);
+      scrollCardContainer(-1);
+    }
+  }
+
+  // Function to show the next hero card
+  function showNextCard() {
+    var totalCards = document.getElementsByClassName('card').length;
+    if (currentCard < totalCards) {
+      showHeroCard(currentCard + 1);
+      scrollCardContainer(1);
+    }
+  }
+
+  // Function to show a specific hero card
+  function showHeroCard(cardNumber) {
+    // Hide all hero cards
+    var heroCards = document.getElementsByClassName('hero-card');
+    for (var i = 0; i < heroCards.length; i++) {
+      heroCards[i].style.display = 'none';
+    }
+
+    // Show the selected hero card
+    var selectedHeroCard = document.getElementById('hero-card-' + cardNumber);
+    selectedHeroCard.style.display = 'flex';
+
+    // Remove active class from all cards
+    var cards = document.getElementsByClassName('card');
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].classList.remove('active');
+    }
+
+    // Add active class to the selected card
+    var selectedCard = document.querySelector('.card:nth-child(' + cardNumber + ')');
+    selectedCard.classList.add('active');
+
+    // Update the current active card
+    currentCard = cardNumber;
+
+    // Scroll the card container to show the selected card
+    scrollCardContainerToCard(cardNumber);
+  }
+
+// Function to scroll the card container to show the selected card
+// Function to scroll the card container to show the selected card
+function scrollCardContainerToCard(cardNumber) {
+  var cardContainer = document.getElementById('card-container');
+  var selectedCard = document.querySelector('.card:nth-child(' + cardNumber + ')');
+  var cardOffsetLeft = selectedCard.offsetLeft;
+  var containerScrollLeft = cardContainer.scrollLeft;
+  var containerWidth = cardContainer.offsetWidth;
+  
+  // Calculate the total width of the hidden cards to the left
+  var totalHiddenWidth = 0;
+  for (var i = 1; i < cardNumber; i++) {
+    var card = document.querySelector('.card:nth-child(' + i + ')');
+    totalHiddenWidth += card.offsetWidth;
+  }
+  
+  // Calculate the maximum scroll position to show the selected card first
+  var maxScrollLeft = totalHiddenWidth - (containerWidth / 8) + (selectedCard.offsetWidth / 2);
+  
+  // Smooth scroll to the maximum scroll position
+  cardContainer.scrollTo({
+    left: maxScrollLeft,
+    behavior: 'smooth'
+  });
+}
+
+
+
+</script>
+
+</body>
+</html>
