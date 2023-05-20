@@ -43,7 +43,11 @@
       text-align: center;
       cursor: pointer;
     }
-    
+    .card-content
+    {
+      display: flex;
+      flex-direction: column;
+    }
     .card.active {
       border: 2px solid blue;
     }
@@ -130,68 +134,102 @@
   <div class="container">
     <div class="card-container" id="card-container">
       <div class="card active" onclick="showHeroCard(1)">
-        <span class="card-icon">Icon 1</span>
+        <div class="card-content">
+          <span class="card-icon">Icon 1</span>
         <span class="card-title">Title 1</span>
+        </div>
       </div>
       <div class="card" onclick="showHeroCard(2)">
-        <span class="card-icon">Icon 2</span>
-        <span class="card-title">Title 2</span>
+        <div class="card-content">
+          <span class="card-icon">Icon 2</span>
+          <span class="card-title">Title 2</span>
+        </div>
       </div>
       <div class="card" onclick="showHeroCard(3)">
-        <span class="card-icon">Icon 3</span>
-        <span class="card-title">Title 3</span>
+        <div class="card-content">
+          <span class="card-icon">Icon 3</span>
+          <span class="card-title">Title 3</span>
+        </div>
       </div>
       <div class="card" onclick="showHeroCard(4)">
-        <span class="card-icon">Icon 4</span>
-        <span class="card-title">Title 4</span>
+        <div class="card-content">
+          <span class="card-icon">Icon 4</span>
+          <span class="card-title">Title 4</span>
+        </div>
       </div>
       <div class="card" onclick="showHeroCard(5)">
-        <span class="card-icon">Icon 5</span>
-        <span class="card-title">Title 6</span>
+        <div class="card-content">
+          <div class="card-content">
+            <span class="card-icon">Icon 5</span>
+            <span class="card-title">Title 6</span>
+          </div>
+        </div>
       </div>
       <div class="card" onclick="showHeroCard(6)">
-        <span class="card-icon">Icon 6</span>
-        <span class="card-title">Title 5</span>
+        <div class="card-content">
+          <span class="card-icon">Icon 6</span>
+          <span class="card-title">Title 5</span>
+        </div>
       </div>
       <div class="card" onclick="showHeroCard(7)">
-        <span class="card-icon">Icon 7</span>
-        <span class="card-title">Title 5</span>
+        <div class="card-content">
+          <span class="card-icon">Icon 7</span>
+          <span class="card-title">Title 5</span>
+        </div>
       </div>
       <div class="card" onclick="showHeroCard(8)">
-        <span class="card-icon">Icon 8</span>
-        <span class="card-title">Title 8</span>
+         <div class="card-content">
+          <span class="card-icon">Icon 8</span>
+          <span class="card-title">Title 8</span>
+         </div>
       </div>
       <div class="card" onclick="showHeroCard(9)">
-        <span class="card-icon">Icon 9</span>
-        <span class="card-title">Title 9</span>
+         <div class="card-content">
+          <span class="card-icon">Icon 9</span>
+          <span class="card-title">Title 9</span>
+         </div>
       </div>
       <div class="card" onclick="showHeroCard(10)">
-        <span class="card-icon">Icon 10</span>
-        <span class="card-title">Title 10</span>
+         <div  class="card-content">
+          <span class="card-icon">Icon 10</span>
+          <span class="card-title">Title 10</span>
+         </div>
       </div>
       <div class="card" onclick="showHeroCard(11)">
-        <span class="card-icon">Icon 11</span>
-        <span class="card-title">Title 11</span>
+         <div class="card-content">
+          <span class="card-icon">Icon 11</span>
+          <span class="card-title">Title 11</span>
+         </div>
       </div>
       <div class="card" onclick="showHeroCard(12)">
-        <span class="card-icon">Icon 12</span>
+        <div class="card-content">
+          <span class="card-icon">Icon 12</span>
         <span class="card-title">Title 12</span>
+        </div>
       </div>
       <div class="card" onclick="showHeroCard(13)">
-        <span class="card-icon">Icon 13</span>
-        <span class="card-title">Title 13</span>
+        <div class="card-content">
+          <span class="card-icon">Icon 13</span>
+          <span class="card-title">Title 13</span>
+        </div>
       </div>
       <div class="card" onclick="showHeroCard(14)">
-        <span class="card-icon">Icon 14</span>
-        <span class="card-title">Title 14</span>
+        <div class="card-content">
+          <span class="card-icon">Icon 14</span>
+          <span class="card-title">Title 14</span>
+        </div>
       </div>
       <div class="card" onclick="showHeroCard(15)">
-        <span class="card-icon">Icon 15</span>
-        <span class="card-title">Title 15</span>
+         <div class="card-content">
+          <span class="card-icon">Icon 15</span>
+          <span class="card-title">Title 15</span>
+         </div>
       </div>
       <div class="card" onclick="showHeroCard(16)">
-        <span class="card-icon">Icon 16</span>
+         <div class="card-content">
+          <span class="card-icon">Icon 16</span>
         <span class="card-title">Title 16</span>
+         </div>
       </div>
     </div>
     <!-- Repeat the above card structure for the remaining cards -->
